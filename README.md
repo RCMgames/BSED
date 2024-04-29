@@ -1,2 +1,2 @@
-# BSCD
-Byte Sized Encoder Decoder - an 8 channel I2C (qwiic compatible) Quadrature Encoder Reader
+# Byte Sized Encoder Decoder
+An 8 channel I2C (qwiic compatible) quadrature encoder reader
