@@ -88,9 +88,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9bd8c4d4ec208c21b8b242905acef65f" id="r_a9bd8c4d4ec208c21b8b242905acef65f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a9bd8c4d4ec208c21b8b242905acef65f">ByteSizedEncoderDecoder</a> (TwoWire *_wire, uint8_t _address=0x0E)</td></tr>
 <tr class="memdesc:a9bd8c4d4ec208c21b8b242905acef65f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Byte Sized Encoder Decoder class.  <br /></td></tr>
 <tr class="separator:a9bd8c4d4ec208c21b8b242905acef65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05da9f6f11790f4c3ee8c51228252dde" id="r_a05da9f6f11790f4c3ee8c51228252dde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a05da9f6f11790f4c3ee8c51228252dde">begin</a> ()</td></tr>
-<tr class="memdesc:a05da9f6f11790f4c3ee8c51228252dde"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets up the Byte Sized Encoder Decoder board all it really does is  <br /></td></tr>
-<tr class="separator:a05da9f6f11790f4c3ee8c51228252dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaafc613073f19a83c58ca35a50412e1" id="r_afaafc613073f19a83c58ca35a50412e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#afaafc613073f19a83c58ca35a50412e1">begin</a> (boolean resetEncoders=true)</td></tr>
+<tr class="memdesc:afaafc613073f19a83c58ca35a50412e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets up the Byte Sized Encoder Decoder board all it really does is tell the board to read from all encoders  <br /></td></tr>
+<tr class="separator:afaafc613073f19a83c58ca35a50412e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66211cb3263c7a7a4856f19d5976d927" id="r_a66211cb3263c7a7a4856f19d5976d927"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a66211cb3263c7a7a4856f19d5976d927">run</a> ()</td></tr>
 <tr class="memdesc:a66211cb3263c7a7a4856f19d5976d927"><td class="mdescLeft">&#160;</td><td class="mdescRight">reads the encoder positions from the board  <br /></td></tr>
 <tr class="separator:a66211cb3263c7a7a4856f19d5976d927"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,8 +177,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a05da9f6f11790f4c3ee8c51228252dde" name="a05da9f6f11790f4c3ee8c51228252dde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05da9f6f11790f4c3ee8c51228252dde">&#9670;&#160;</a></span>begin()</h2>
+<a id="afaafc613073f19a83c58ca35a50412e1" name="afaafc613073f19a83c58ca35a50412e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaafc613073f19a83c58ca35a50412e1">&#9670;&#160;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +189,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ByteSizedEncoderDecoder::begin </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>resetEncoders</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -200,7 +201,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>sets up the Byte Sized Encoder Decoder board all it really does is </p>
+<p>sets up the Byte Sized Encoder Decoder board all it really does is tell the board to read from all encoders </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resetEncoders</td><td>whether to reset the encoder positions to 0, default is true </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section note"><dt>Note</dt><dd>call this after Wire.begin() has been called </dd></dl>
 
 </div>
