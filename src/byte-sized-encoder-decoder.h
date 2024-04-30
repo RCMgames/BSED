@@ -41,9 +41,9 @@ public:
     /**
      * @brief Constructor for the Byte Sized Encoder Decoder class
      * @param  _wire: I2C bus to communicate over. &Wire or &Wire1
-     * @param  _address: I2C address of the Byte Sized Encoder Decoder board (as selected by the jumpers), default is 0x0E
+     * @param  _address: I2C address of the Byte Sized Encoder Decoder board (as selected by the jumpers), default is 14, (14-17 are options)
      */
-    ByteSizedEncoderDecoder(TwoWire* _wire, uint8_t _address = 0x0E)
+    ByteSizedEncoderDecoder(TwoWire* _wire, uint8_t _address = 14)
     {
         wire = _wire;
         address = _address;

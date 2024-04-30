@@ -4,7 +4,7 @@
 /*
 https://github.com/RCMgames/BSCD
 */
-ByteSizedEncoderDecoder bsed = ByteSizedEncoderDecoder(&Wire, 0x11);
+ByteSizedEncoderDecoder bsed = ByteSizedEncoderDecoder(&Wire, 14);
 void setup()
 {
     Serial.begin(115200);
