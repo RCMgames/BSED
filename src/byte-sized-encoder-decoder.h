@@ -51,12 +51,16 @@ public:
     }
     /**
      * @brief  sets up the Byte Sized Encoder Decoder board
-     * all it really does is
+     * all it really does is tell the board to read from all encoders
+     * @param resetEncoders: whether to reset the encoder positions to 0, default is true
      * @note  call this after Wire.begin() has been called
      */
-    void begin()
+    void begin(boolean resetEncoders = true)
     {
         setWhichEncoders(255);
+        if (resetEncoders) {
+            resetEncoderPositions();
+        }
     }
     /**
      * @brief  reads the encoder positions from the board
