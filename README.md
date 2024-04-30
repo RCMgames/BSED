@@ -1,5 +1,10 @@
 # Byte Sized Encoder Decoder
 
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/joshua1024/library/byte-sized-encoder-decoder.svg)](https://registry.platformio.org/libraries/joshua1024/byte-sized-encoder-decoder)
+[![arduino-library-badge](https://www.ardu-badge.com/badge/byte-sized-encoder-decoder.svg?)](https://www.ardu-badge.com/byte-sized-encoder-decoder)
+[![Arduino Lint](https://github.com/RCMgames/BSCD/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/RCMgames/BSCD/actions/workflows/arduino-lint.yml)
+[![doxygen](https://github.com/RCMgames/BSCD/actions/workflows/doxygen.yml/badge.svg)](https://github.com/RCMgames/BSCD/actions/workflows/doxygen.yml)
+
 Reads 8 quadrature encoders and communicates over I2C.
 
 https://github.com/RCMgames/BSCD
