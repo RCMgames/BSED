@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['firmware_20for_20the_20board_20and_20hardware_20for_20the_20board_0',['links (this repository contains an Arduino library, firmware for the board, and hardware for the board)',['../index.html#autotoc_md1',1,'']]],
-  ['for_20the_20board_20and_20hardware_20for_20the_20board_1',['links (this repository contains an Arduino library, firmware for the board, and hardware for the board)',['../index.html#autotoc_md1',1,'']]]
+  ['isencoderactive_0',['isEncoderActive',['../class_byte_sized_encoder_decoder.html#a63045fd8fa427538e7266c57fb8cd052',1,'ByteSizedEncoderDecoder']]]
 ];

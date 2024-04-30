@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['isencoderactive_0',['isEncoderActive',['../class_byte_sized_encoder_decoder.html#a63045fd8fa427538e7266c57fb8cd052',1,'ByteSizedEncoderDecoder']]]
+  ['setwhichencoders_0',['setWhichEncoders',['../class_byte_sized_encoder_decoder.html#aab6833c82200891fc1f5d52e1c5bbca8',1,'ByteSizedEncoderDecoder']]],
+  ['sized_20encoder_20decoder_1',['Byte Sized Encoder Decoder',['../index.html',1,'']]]
 ];
