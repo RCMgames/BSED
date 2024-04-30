@@ -15,7 +15,8 @@ https://github.com/RCMgames/BSCD
 * powered by an ATMega328P
 * hand solderable surface mount components
 
-### links (this repository contains an Arduino library, firmware for the board, and hardware for the board)
+### links 
+(this repository contains an Arduino library, firmware for the board, and hardware for the board)
 * [Documentation for Library](https://rcmgames.github.io/BSCD/class_byte_sized_encoder_decoder.html)
 * [Hardware](https://github.com/RCMgames/BSCD/tree/main/extras/hardware)
 * [Firmware](https://github.com/RCMgames/BSCD/tree/main/extras/firmware)
