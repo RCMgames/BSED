@@ -19,7 +19,6 @@ https://github.com/RCMgames/BSCD
 * [Documentation for Library](https://rcmgames.github.io/BSCD/class_byte_sized_encoder_decoder.html)
 * [Hardware](https://github.com/RCMgames/BSCD/tree/main/extras/hardware)
 * [Firmware](https://github.com/RCMgames/BSCD/tree/main/extras/firmware)
-* Arduino library coming soon
 
 ![cad render](https://github.com/RCMgames/BSCD/blob/69d2e29eb2ffca357fe0b54ef2ff80991d4873b7/extras/hardware/CAD%20renders/render%201.jpg)
 
