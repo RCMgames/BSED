@@ -31,35 +31,35 @@ void onReceive(int numBytes)
 }
 void onRequest()
 {
-    if (bitRead(requestNumber, 0)) {
+    if (bitRead(requestNumber, 7)) {
         Wire.write(encoderCount[0] >> 8);
         Wire.write(encoderCount[0] & 0xFF);
     }
-    if (bitRead(requestNumber, 1)) {
+    if (bitRead(requestNumber, 6)) {
         Wire.write(encoderCount[1] >> 8);
         Wire.write(encoderCount[1] & 0xFF);
     }
-    if (bitRead(requestNumber, 2)) {
+    if (bitRead(requestNumber, 5)) {
         Wire.write(encoderCount[2] >> 8);
         Wire.write(encoderCount[2] & 0xFF);
     }
-    if (bitRead(requestNumber, 3)) {
+    if (bitRead(requestNumber, 4)) {
         Wire.write(encoderCount[3] >> 8);
         Wire.write(encoderCount[3] & 0xFF);
     }
-    if (bitRead(requestNumber, 4)) {
+    if (bitRead(requestNumber, 3)) {
         Wire.write(encoderCount[4] >> 8);
         Wire.write(encoderCount[4] & 0xFF);
     }
-    if (bitRead(requestNumber, 5)) {
+    if (bitRead(requestNumber, 2)) {
         Wire.write(encoderCount[5] >> 8);
         Wire.write(encoderCount[5] & 0xFF);
     }
-    if (bitRead(requestNumber, 6)) {
+    if (bitRead(requestNumber, 1)) {
         Wire.write(encoderCount[6] >> 8);
         Wire.write(encoderCount[6] & 0xFF);
     }
-    if (bitRead(requestNumber, 7)) {
+    if (bitRead(requestNumber, 0)) {
         Wire.write(encoderCount[7] >> 8);
         Wire.write(encoderCount[7] & 0xFF);
     }

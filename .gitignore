@@ -1,2 +1,5 @@
 desktop.ini
 /hardware/ByteSizedEncoderDecoder-backups
+.vscode/launch.json
+/.pio
+.vscode/c_cpp_properties.json
