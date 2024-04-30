@@ -2,6 +2,8 @@
 
 Reads 8 quadrature encoders and communicates over I2C.
 
+https://github.com/RCMgames/BSCD
+
 * Reads 8 quadrature encoders
 * 1.0x0.85 inches
 * I2C (Qwiic Compatible)
@@ -9,7 +11,7 @@ Reads 8 quadrature encoders and communicates over I2C.
 * hand solderable surface mount components
 
 ### links
-* [Documentation for Library](https://rcmgames.github.io/BSCD/)
+* [Documentation for Library](https://rcmgames.github.io/BSCD/class_byte_sized_encoder_decoder.html)
 * [Hardware](https://github.com/RCMgames/BSCD/tree/main/extras/hardware)
 * [Firmware](https://github.com/RCMgames/BSCD/tree/main/extras/firmware)
 * Arduino library coming soon
