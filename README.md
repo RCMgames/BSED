@@ -21,5 +21,5 @@ https://github.com/RCMgames/BSCD
 * [Hardware](https://github.com/RCMgames/BSCD/tree/main/extras/hardware)
 * [Firmware](https://github.com/RCMgames/BSCD/tree/main/extras/firmware)
 
-![cad render](https://github.com/RCMgames/BSCD/blob/69d2e29eb2ffca357fe0b54ef2ff80991d4873b7/extras/hardware/CAD%20renders/render%201.jpg)
-
+![front](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039300.JPG)
+![back](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039304.JPG)
