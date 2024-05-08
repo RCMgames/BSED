@@ -4,24 +4,24 @@
 /*
 https://github.com/RCMgames/BSCD
 */
-ByteSizedEncoderDecoder bsed = ByteSizedEncoderDecoder(&Wire, 14);
+ByteSizedEncoderDecoder bsed = ByteSizedEncoderDecoder(&Wire1, 14);
 void setup()
 {
     Serial.begin(115200);
-    Wire.begin();
+    Wire1.begin();
     bsed.begin();
 }
 void loop()
 {
     bsed.run();
-    for (int i = 0; i < 8; i++) {
+    for (int i = 1; i <= 8; i++) {
         if (bsed.isEncoderActive(i)) {
             Serial.print(i);
             Serial.print(": ");
-            Serial.print(bsed.getEncoderPosition(i));
+            Serial.print(bsed.getEncoderPositionWithOverflows(i));
             Serial.print(", ");
         }
     }
     Serial.println();
-    delay(100);
+    delay(10);
 }

@@ -7,7 +7,7 @@ volatile uint8_t lastPortCPinStates = PORTC_used_pins_mask;
 const uint8_t PORTD_used_pins_mask = 0b11111100; // D7-D2
 volatile uint8_t lastPortDPinStates = PORTD_used_pins_mask;
 
-volatile int16_t encoderCount[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+volatile uint16_t encoderCount[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
 volatile uint8_t requestNumber = 255;
 
@@ -32,36 +32,36 @@ void onReceive(int numBytes)
 void onRequest()
 {
     if (bitRead(requestNumber, 7)) {
-        Wire.write(encoderCount[0] >> 8);
-        Wire.write(encoderCount[0] & 0xFF);
+        Wire.write((uint8_t)(encoderCount[0] >> 8));
+        Wire.write((uint8_t)(encoderCount[0] & 0xFF));
     }
     if (bitRead(requestNumber, 6)) {
-        Wire.write(encoderCount[1] >> 8);
-        Wire.write(encoderCount[1] & 0xFF);
+        Wire.write((uint8_t)(encoderCount[1] >> 8));
+        Wire.write((uint8_t)(encoderCount[1] & 0xFF));
     }
     if (bitRead(requestNumber, 5)) {
-        Wire.write(encoderCount[2] >> 8);
-        Wire.write(encoderCount[2] & 0xFF);
+        Wire.write((uint8_t)(encoderCount[2] >> 8));
+        Wire.write((uint8_t)(encoderCount[2] & 0xFF));
     }
     if (bitRead(requestNumber, 4)) {
-        Wire.write(encoderCount[3] >> 8);
-        Wire.write(encoderCount[3] & 0xFF);
+        Wire.write((uint8_t)(encoderCount[3] >> 8));
+        Wire.write((uint8_t)(encoderCount[3] & 0xFF));
     }
     if (bitRead(requestNumber, 3)) {
-        Wire.write(encoderCount[4] >> 8);
-        Wire.write(encoderCount[4] & 0xFF);
+        Wire.write((uint8_t)(encoderCount[4] >> 8));
+        Wire.write((uint8_t)(encoderCount[4] & 0xFF));
     }
     if (bitRead(requestNumber, 2)) {
-        Wire.write(encoderCount[5] >> 8);
-        Wire.write(encoderCount[5] & 0xFF);
+        Wire.write((uint8_t)(encoderCount[5] >> 8));
+        Wire.write((uint8_t)(encoderCount[5] & 0xFF));
     }
     if (bitRead(requestNumber, 1)) {
-        Wire.write(encoderCount[6] >> 8);
-        Wire.write(encoderCount[6] & 0xFF);
+        Wire.write((uint8_t)(encoderCount[6] >> 8));
+        Wire.write((uint8_t)(encoderCount[6] & 0xFF));
     }
     if (bitRead(requestNumber, 0)) {
-        Wire.write(encoderCount[7] >> 8);
-        Wire.write(encoderCount[7] & 0xFF);
+        Wire.write((uint8_t)(encoderCount[7] >> 8));
+        Wire.write((uint8_t)(encoderCount[7] & 0xFF));
     }
 }
 
@@ -114,17 +114,17 @@ ISR(PCINT0_vect)
     lastPortBPinStates = pinStates;
 
     if (bitRead(changedPins, 0))
-        (bitRead(pinStates, 0) == bitRead(pinStates, 1)) ? encoderCount[3]++ : encoderCount[3]--;
+        (bitRead(pinStates, 0) == bitRead(pinStates, 1)) ? encoderCount[4]++ : encoderCount[4]--;
     if (bitRead(changedPins, 1))
-        (bitRead(pinStates, 0) != bitRead(pinStates, 1)) ? encoderCount[3]++ : encoderCount[3]--;
+        (bitRead(pinStates, 0) != bitRead(pinStates, 1)) ? encoderCount[4]++ : encoderCount[4]--;
     if (bitRead(changedPins, 2))
-        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[4]++ : encoderCount[4]--;
+        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[3]++ : encoderCount[3]--;
     if (bitRead(changedPins, 3))
-        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[4]++ : encoderCount[4]--;
+        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[3]++ : encoderCount[3]--;
     if (bitRead(changedPins, 4))
-        (bitRead(pinStates, 4) == bitRead(pinStates, 5)) ? encoderCount[5]++ : encoderCount[5]--;
+        (bitRead(pinStates, 4) == bitRead(pinStates, 5)) ? encoderCount[2]++ : encoderCount[2]--;
     if (bitRead(changedPins, 5))
-        (bitRead(pinStates, 4) != bitRead(pinStates, 5)) ? encoderCount[5]++ : encoderCount[5]--;
+        (bitRead(pinStates, 4) != bitRead(pinStates, 5)) ? encoderCount[2]++ : encoderCount[2]--;
 }
 
 ISR(PCINT1_vect)
@@ -134,13 +134,13 @@ ISR(PCINT1_vect)
     uint8_t changedPins = pinStates ^ lastPortCPinStates;
     lastPortCPinStates = pinStates;
     if (bitRead(changedPins, 0))
-        (bitRead(pinStates, 0) == bitRead(pinStates, 1)) ? encoderCount[6]++ : encoderCount[6]--;
+        (bitRead(pinStates, 0) == bitRead(pinStates, 1)) ? encoderCount[1]++ : encoderCount[1]--;
     if (bitRead(changedPins, 1))
-        (bitRead(pinStates, 0) != bitRead(pinStates, 1)) ? encoderCount[6]++ : encoderCount[6]--;
+        (bitRead(pinStates, 0) != bitRead(pinStates, 1)) ? encoderCount[1]++ : encoderCount[1]--;
     if (bitRead(changedPins, 2))
-        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[7]++ : encoderCount[7]--;
+        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[0]-- : encoderCount[0]++;
     if (bitRead(changedPins, 3))
-        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[7]++ : encoderCount[7]--;
+        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[0]-- : encoderCount[0]++;
 }
 ISR(PCINT2_vect)
 {
@@ -148,15 +148,15 @@ ISR(PCINT2_vect)
     uint8_t changedPins = pinStates ^ lastPortDPinStates;
     lastPortDPinStates = pinStates;
     if (bitRead(changedPins, 2))
-        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[0]++ : encoderCount[0]--;
+        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[7]++ : encoderCount[7]--;
     if (bitRead(changedPins, 3))
-        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[0]++ : encoderCount[0]--;
+        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[7]++ : encoderCount[7]--;
     if (bitRead(changedPins, 4))
-        (bitRead(pinStates, 4) == bitRead(pinStates, 5)) ? encoderCount[1]++ : encoderCount[1]--;
+        (bitRead(pinStates, 4) == bitRead(pinStates, 5)) ? encoderCount[6]++ : encoderCount[6]--;
     if (bitRead(changedPins, 5))
-        (bitRead(pinStates, 4) != bitRead(pinStates, 5)) ? encoderCount[1]++ : encoderCount[1]--;
+        (bitRead(pinStates, 4) != bitRead(pinStates, 5)) ? encoderCount[6]++ : encoderCount[6]--;
     if (bitRead(changedPins, 6))
-        (bitRead(pinStates, 6) == bitRead(pinStates, 7)) ? encoderCount[2]++ : encoderCount[2]--;
+        (bitRead(pinStates, 6) == bitRead(pinStates, 7)) ? encoderCount[5]++ : encoderCount[5]--;
     if (bitRead(changedPins, 7))
-        (bitRead(pinStates, 6) != bitRead(pinStates, 7)) ? encoderCount[2]++ : encoderCount[2]--;
+        (bitRead(pinStates, 6) != bitRead(pinStates, 7)) ? encoderCount[5]++ : encoderCount[5]--;
 }

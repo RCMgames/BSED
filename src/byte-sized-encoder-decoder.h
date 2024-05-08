@@ -7,11 +7,22 @@
  */
 class ByteSizedEncoderDecoder {
 protected:
+    /**
+     * @brief  I2C address of the Byte Sized Encoder Decoder board (as selected by the jumpers)
+     */
     uint8_t address;
     /**
      * @brief  array of 8 numbers representing the number of steps each encoder has taken
      */
     int16_t encoderCount[8];
+    /**
+     * @brief  array of 8 numbers representing the number of times each encoder's counter variable has overflowed
+     */
+    int16_t encoderOverflows[8];
+    /**
+     * @brief  array of 8 numbers representing the last encoder count read from the board
+     */
+    int16_t lastEncoderCount[8];
     /**
      * @brief  I2C bus to communicate over.
      */
@@ -82,9 +93,29 @@ public:
             if (high == -1 || low == -1) {
                 // we didn't get data
             } else {
-                encoderCount[i] = (wire->read() << 8 | wire->read());
+                lastEncoderCount[i] = encoderCount[i];
+                encoderCount[i] = (((uint16_t)high) << 8 | ((uint16_t)low));
+                if (abs(encoderCount[i] - lastEncoderCount[i]) > (1 << 15)) {
+                    encoderOverflows[i] += (encoderCount[i] > lastEncoderCount[i]) ? -1 : 1;
+                }
             }
         }
+    }
+    /**
+     * @brief  gets the position of an encoder as a 32 bit signed integer (it counts how many times the 16 bit number has overflowed)
+     * @param  n: encoder number (1-8), other values will return 0
+     * @param  read: whether to read the encoder positions from the board before returning the value, default is false
+     * @retval int32_t: the number of steps the encoder has taken
+     */
+    int32_t getEncoderPositionWithOverflows(uint8_t n, boolean read = false)
+    {
+        if (read) {
+            run();
+        }
+        if (n > 8 || n < 1) {
+            return 0;
+        }
+        return (int32_t)encoderCount[n - 1] + (int32_t)encoderOverflows[n - 1] * 65536;
     }
     /**
      * @brief  gets the position of an encoder
@@ -104,10 +135,17 @@ public:
     }
     /**
      * @brief  resets all encoder positions to 0
+     * @param  resetVariables: whether to reset the encoderCount and encoderOverflows variables, default is true
      */
-    void resetEncoderPositions()
+    void resetEncoderPositions(boolean resetVariables = true)
     {
         write(0);
+        if (resetVariables) {
+            for (byte i = 0; i < 8; i++) {
+                encoderCount[i] = 0;
+                encoderOverflows[i] = 0;
+            }
+        }
     }
     /**
      * @brief  set which encoders you want to receive data from
