@@ -1,3 +1,10 @@
-Here are the Kicad and Gerber files for creating the circuit boards this software is designed to run on.
+Here are the Kicad and Gerber files for creating the circuit boards this firmware is designed to run on.
 
-You could also run it on a bare ATMega328P chip or another board, but the code is specialized and uses hard-coded pin numbers.
+You could theoretically run it on a bare ATMega328P chip or another board, but the code is specialized for this board and uses hard-coded pin numbers.
+
+### Bill Of Materials
+
+* 1x PCB
+* 2x https://www.digikey.com/en/products/detail/jst-sales-america-inc/SM04B-SRSS-TB/926710
+* 1x https://www.digikey.com/en/products/detail/microchip-technology/ATMEGA328PB-AU/5638812
+* 4x 1x08 0.1" female header pins
