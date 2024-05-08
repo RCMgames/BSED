@@ -28,6 +28,6 @@ https://github.com/RCMgames/BSED
 
 I've been working on [hardware and software for small wifi controlled robots](https://github.com/rcmgames) since 2020.
 
-As I have designed increasingly small circuit boards for controlling servos and motors on a robot, I started looking for a way to connect lots of quadrature encoders as inputs to a microcontroller. I was unable to find any existing Qwiic-compatible encoder reading boards that can handle multiple high-speed quadrature inputs. This board can help you control 8 motors with encoder feedback for precise control.
+As I have designed increasingly small [circuit boards](https://github.com/rcmgames) for controlling servos and motors on robots, I started looking for a way to connect lots of quadrature encoders as inputs to a microcontroller. I was unable to find any existing Qwiic-compatible encoder reading boards that can handle multiple high-speed quadrature inputs. This board can help you control 8 motors with encoder feedback for precise control.
 
 
