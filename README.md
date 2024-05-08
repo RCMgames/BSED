@@ -19,7 +19,15 @@ https://github.com/RCMgames/BSED
 (this repository contains an Arduino library, firmware for the board, and hardware for the board)
 * [Documentation for Library](https://rcmgames.github.io/BSED/class_byte_sized_encoder_decoder.html)
 * [Hardware](https://github.com/RCMgames/BSED/tree/main/extras/hardware)
+  * If you buy PCBs from PCBWay through this link PCBWay generously gives me a 10% commission without costing you anything
+    * https://www.pcbway.com/project/shareproject/Byte_Sized_Encoder_Decoder_v1_0_5b76fc5d.html
 * [Firmware](https://github.com/RCMgames/BSED/tree/main/extras/firmware)
 
 ![front](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039300.JPG)
 ![back](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039304.JPG)
+
+I've been working on [hardware and software for small wifi controlled robots](https://github.com/rcmgames) since 2020.
+
+As I have designed increasingly small circuit boards for controlling servos and motors on a robot, I started looking for a way to connect lots of quadrature encoders as inputs to a microcontroller. I was unable to find any existing Qwiic-compatible encoder reading boards that can handle multiple high-speed quadrature inputs. This board can help you control 8 motors with encoder feedback for precise control.
+
+

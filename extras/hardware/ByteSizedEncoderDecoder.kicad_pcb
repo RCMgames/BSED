@@ -983,7 +983,7 @@
       (net 2 "+3.3V") (pinfunction "Pin_5") (pintype "passive") (tstamp 48d80bc4-ed11-413c-b22f-58ed6a2c6b56))
     (pad "6" thru_hole oval (at 2.54 5.08) (size 1.7 1.7) (drill 0.65) (layers "*.Cu" "*.Mask")
       (net 12 "3b") (pinfunction "Pin_6") (pintype "passive") (tstamp 3b8f817e-127f-4d47-91fd-9f37570de9b0))
-    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x03_P2.54mm_Vertical.wrl"
+    (model "${KICAD6_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_2x03_P2.54mm_Vertical.wrl" hide
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
