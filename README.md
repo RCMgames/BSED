@@ -19,6 +19,8 @@ https://github.com/RCMgames/BSED
 (this repository contains an Arduino library, firmware for the board, and hardware for the board)
 * [Documentation for Library](https://rcmgames.github.io/BSCD/class_byte_sized_encoder_decoder.html)
 * [Hardware](https://github.com/RCMgames/BSED/tree/main/extras/hardware)
+  * If you buy PCBs from PCBWay through this link PCBWay generously gives me a 10% commission without costing you anything
+    * https://www.pcbway.com/project/shareproject/Byte_Sized_Encoder_Decoder_v1_0_5b76fc5d.html
 * [Firmware](https://github.com/RCMgames/BSED/tree/main/extras/firmware)
 
 ![front](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039300.JPG)
