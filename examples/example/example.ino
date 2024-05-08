@@ -2,7 +2,7 @@
 #include <Wire.h>
 #include <byte-sized-encoder-decoder.h>
 /*
-https://github.com/RCMgames/BSCD
+https://github.com/RCMgames/BSED
 */
 ByteSizedEncoderDecoder bsed = ByteSizedEncoderDecoder(&Wire1, 14);
 void setup()

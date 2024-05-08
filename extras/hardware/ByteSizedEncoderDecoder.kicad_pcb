@@ -86,7 +86,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "gerbers/gerbers - BSCD - v1.0/")
+      (outputdirectory "gerbers/gerbers - BSED - v1.0/")
     )
   )
 
