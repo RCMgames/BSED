@@ -12,7 +12,7 @@ https://github.com/RCMgames/BSCD
 * Reads 8 quadrature encoders
 * 1.0x0.85 inches
 * I2C (Qwiic Compatible)
-* powered by an ATMega328P
+* powered by an ATMega328PB
 * hand solderable surface mount components
 
 ### links 
