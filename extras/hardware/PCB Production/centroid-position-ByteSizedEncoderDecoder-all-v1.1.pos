@@ -1,0 +1,9 @@
+### Footprint positions - created on Thu May  9 01:49:11 2024 ###
+### Printed by KiCad version 7.0.8
+## Unit = mm, Angle = deg.
+## Side : All
+# Ref     Val                   Package                         PosX       PosY       Rot  Side
+U1        ATMEGA328PB,_32-TQFP  TQFP32_32A_MCH               12.7000    -6.0960  180.0000  bottom
+J1        SM04B-SRSS-TB         JST_SM04B-SRSS-TB_LF__SN_    10.0330    -5.0480  180.0000  top
+J2        SM04B-SRSS-TB         JST_SM04B-SRSS-TB_LF__SN_    17.7800    -5.0480  180.0000  top
+## End

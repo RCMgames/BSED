@@ -1,0 +1,6 @@
+"Reference","Value","Footprint","Datasheet","MPN","digikey link","Qty"
+"J1, J2","SM04B-SRSS-TB","parts:JST_SM04B-SRSS-TB_LF__SN_","","SM04B-SRSS-TB","455-SM04B-SRSS-TBCT-ND","2"
+"J3-J10","1x4 female header pins 0.1""","Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical","","do not place or purchase for PCB assembly","do not place or purchase for PCB assembly","8"
+"J11","ICSP pads (for interfacing with pogo pins)","Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical","","DNP","n/a","1"
+"NT1, NT2","NetTie_2","Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm","n/a","DNP","n/a","2"
+"U1","ATMEGA328PB, 32-TQFP","parts:TQFP32_32A_MCH","https://ww1.microchip.com/downloads/en/DeviceDoc/40001907A.pdf","ATMEGA328PB-AU","ATMEGA328PB-AU-ND","1"
