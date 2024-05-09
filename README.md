@@ -10,7 +10,7 @@ Reads 8 quadrature encoders and communicates over I2C.
 https://github.com/RCMgames/BSED
 
 * Reads 8 quadrature encoders
-* 1.0x0.85 inches
+* 1.0x0.85 inches, 25.4x21.59 millimeters
 * I2C (Qwiic Compatible)
 * powered by an ATmega328PB
 * hand solderable surface mount components
