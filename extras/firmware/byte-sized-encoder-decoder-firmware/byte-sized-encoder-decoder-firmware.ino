@@ -11,6 +11,8 @@ volatile uint16_t encoderCount[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
 volatile uint8_t requestNumber = 255;
 
+volatile uint8_t sendI = 0;
+
 void onReceive(int numBytes)
 {
     while (Wire.available()) {
@@ -26,43 +28,79 @@ void onReceive(int numBytes)
             encoderCount[7] = 0;
         } else if (data > 0 && data <= 0xFF) {
             requestNumber = data;
+            sendI = 0;
         }
     }
 }
 void onRequest()
 {
-    if (bitRead(requestNumber, 7)) {
-        Wire.write((uint8_t)(encoderCount[0] >> 8));
-        Wire.write((uint8_t)(encoderCount[0] & 0xFF));
+    if (sendI == 0) {
+        sendI++;
+        if (bitRead(requestNumber, 7)) {
+            Wire.write((uint8_t)(encoderCount[0] >> 8));
+            Wire.write((uint8_t)(encoderCount[0] & 0xFF));
+            return;
+        }
     }
-    if (bitRead(requestNumber, 6)) {
-        Wire.write((uint8_t)(encoderCount[1] >> 8));
-        Wire.write((uint8_t)(encoderCount[1] & 0xFF));
+    if (sendI == 1) {
+        sendI++;
+        if (bitRead(requestNumber, 6)) {
+            Wire.write((uint8_t)(encoderCount[1] >> 8));
+            Wire.write((uint8_t)(encoderCount[1] & 0xFF));
+            return;
+        }
     }
-    if (bitRead(requestNumber, 5)) {
-        Wire.write((uint8_t)(encoderCount[2] >> 8));
-        Wire.write((uint8_t)(encoderCount[2] & 0xFF));
+    if (sendI == 2) {
+        sendI++;
+        if (bitRead(requestNumber, 5)) {
+            Wire.write((uint8_t)(encoderCount[2] >> 8));
+            Wire.write((uint8_t)(encoderCount[2] & 0xFF));
+            return;
+        }
     }
-    if (bitRead(requestNumber, 4)) {
-        Wire.write((uint8_t)(encoderCount[3] >> 8));
-        Wire.write((uint8_t)(encoderCount[3] & 0xFF));
+    if (sendI == 3) {
+        sendI++;
+        if (bitRead(requestNumber, 4)) {
+            Wire.write((uint8_t)(encoderCount[3] >> 8));
+            Wire.write((uint8_t)(encoderCount[3] & 0xFF));
+            return;
+        }
     }
-    if (bitRead(requestNumber, 3)) {
-        Wire.write((uint8_t)(encoderCount[4] >> 8));
-        Wire.write((uint8_t)(encoderCount[4] & 0xFF));
+    if (sendI == 4) {
+        sendI++;
+        if (bitRead(requestNumber, 3)) {
+            Wire.write((uint8_t)(encoderCount[4] >> 8));
+            Wire.write((uint8_t)(encoderCount[4] & 0xFF));
+            return;
+        }
     }
-    if (bitRead(requestNumber, 2)) {
-        Wire.write((uint8_t)(encoderCount[5] >> 8));
-        Wire.write((uint8_t)(encoderCount[5] & 0xFF));
+    if (sendI == 5) {
+        sendI++;
+        if (bitRead(requestNumber, 2)) {
+            Wire.write((uint8_t)(encoderCount[5] >> 8));
+            Wire.write((uint8_t)(encoderCount[5] & 0xFF));
+            return;
+        }
     }
-    if (bitRead(requestNumber, 1)) {
-        Wire.write((uint8_t)(encoderCount[6] >> 8));
-        Wire.write((uint8_t)(encoderCount[6] & 0xFF));
+    if (sendI == 6) {
+        sendI++;
+        if (bitRead(requestNumber, 1)) {
+            Wire.write((uint8_t)(encoderCount[6] >> 8));
+            Wire.write((uint8_t)(encoderCount[6] & 0xFF));
+            return;
+        }
     }
-    if (bitRead(requestNumber, 0)) {
-        Wire.write((uint8_t)(encoderCount[7] >> 8));
-        Wire.write((uint8_t)(encoderCount[7] & 0xFF));
+    if (sendI == 7) {
+        sendI++;
+        if (bitRead(requestNumber, 0)) {
+            Wire.write((uint8_t)(encoderCount[7] >> 8));
+            Wire.write((uint8_t)(encoderCount[7] & 0xFF));
+            return;
+        }
     }
+    sendI = 0;
+    Wire.write(0); // shouldn't get here
+    Wire.write(0);
 }
 
 void setup()

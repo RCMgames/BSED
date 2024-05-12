@@ -8,8 +8,9 @@ ByteSizedEncoderDecoder bsed = ByteSizedEncoderDecoder(&Wire1, 14);
 void setup()
 {
     Serial.begin(115200);
-    Wire1.begin();
+    Wire1.begin(SDA1, SCL1, 400000);
     bsed.begin();
+    // bsed.setWhichEncoders(0b10010001);
 }
 void loop()
 {

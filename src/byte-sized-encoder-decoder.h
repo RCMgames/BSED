@@ -79,11 +79,15 @@ public:
      */
     void run()
     {
-        wire->requestFrom(address, (uint8_t)(2 * bitCount(whichEncodersMask)));
+        wire->beginTransmission(address);
+        wire->write(whichEncodersMask);
+        wire->endTransmission();
+        delayMicroseconds(50);
         for (byte i = 0; i < 8; i++) {
-            if (bitRead(whichEncodersMask, i) == 0) {
+            if (bitRead(whichEncodersMask, 7 - i) == 0) {
                 continue;
             }
+            wire->requestFrom(address, (uint8_t)2);
             int high = -1;
             int low = -1;
             if (wire->available())
@@ -169,7 +173,7 @@ public:
         if (n > 8 || n < 1) {
             return false;
         }
-        return bitRead(whichEncodersMask, n - 1);
+        return bitRead(whichEncodersMask, 7 - (n - 1));
     }
 };
 #endif // BYTE_SIZED_ENCODER_DECODER_H

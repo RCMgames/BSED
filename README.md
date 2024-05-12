@@ -23,6 +23,11 @@ https://github.com/RCMgames/BSED
     * https://www.pcbway.com/project/shareproject/Byte_Sized_Encoder_Decoder_v1_0_5b76fc5d.html
 * [Firmware](https://github.com/RCMgames/BSED/tree/main/extras/firmware)
 
+### testing
+Approximately 12000 encoder counts per second can be read from each encoder, but do your own testing before trusting this software.
+
+See, and contribute to, this discussion on testing results: https://github.com/RCMgames/BSED/discussions/6
+
 ![front](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039300.JPG)
 ![back](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039304.JPG)
 
