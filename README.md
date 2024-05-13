@@ -35,4 +35,5 @@ I've been working on [hardware and software for small wifi controlled robots](ht
 
 As I have designed increasingly small [circuit boards](https://github.com/rcmgames) for controlling servos and motors on robots, I started looking for a way to connect lots of quadrature encoders as inputs to a microcontroller. I was unable to find any existing Qwiic-compatible encoder reading boards that can handle multiple high-speed quadrature inputs. This board can help you control 8 motors with encoder feedback for precise control.
 
-
+## Acknowledgements
+* I would like to thank [PCBWay](https://www.pcbway.com/) for sponsoring prototyping runs of this project. PCBWay produces very nice boards, supports open source hardware, and gave me great support as I worked on this project. Special thanks to Liam!
