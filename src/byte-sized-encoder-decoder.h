@@ -31,21 +31,30 @@ protected:
      * @brief  bit mask of which encoders to read from
      */
     uint8_t whichEncodersMask;
+    /**
+     * @brief  the last time the encoders were read (microseconds)
+     */
+    unsigned long lastReadMicros[8];
+    /**
+     * @brief  array of 8 numbers representing the velocity of each encoder (steps per second)
+     */
+    int16_t encoderVelocity[8];
+    /**
+     * @brief  after this many milliseconds without an encoder tick velocity is set to zero.
+     */
+    int16_t encoderSlowestInterval[8];
+    /**
+     * @brief  enough counts to calculate velocity from
+     */
+    int16_t encoderEnoughCounts[8];
+    /**
+     * @brief  helper function to write a byte to the board
+     */
     inline void write(uint8_t data)
     {
         wire->beginTransmission(address);
         wire->write(data);
         wire->endTransmission();
-    }
-    inline byte bitCount(uint8_t b)
-    {
-        byte count = 0;
-        for (byte i = 0; i < 8; i++) {
-            if (bitRead(b, i) == 1) {
-                count++;
-            }
-        }
-        return count;
     }
 
 public:
@@ -81,17 +90,18 @@ public:
     {
         wire->beginTransmission(address);
         wire->write(whichEncodersMask);
-        wire->endTransmission();
-        delayMicroseconds(50);
+        wire->endTransmission(true);
+        delayMicroseconds(50); // time for the board to prepare to respond
         for (byte i = 0; i < 8; i++) {
             if (bitRead(whichEncodersMask, 7 - i) == 0) {
                 continue;
             }
-            wire->requestFrom(address, (uint8_t)2);
             int high = -1;
             int low = -1;
+            wire->requestFrom(address, (uint8_t)1);
             if (wire->available())
                 high = wire->read();
+            wire->requestFrom(address, (uint8_t)1);
             if (wire->available())
                 low = wire->read();
             if (high == -1 || low == -1) {
@@ -102,6 +112,13 @@ public:
                 if (abs(encoderCount[i] - lastEncoderCount[i]) > (1 << 15)) {
                     encoderOverflows[i] += (encoderCount[i] > lastEncoderCount[i]) ? -1 : 1;
                 }
+                // calculate velocity
+                unsigned long mic = micros();
+                int32_t hundredMicrosSinceLastRead = (mic - lastReadMicros[i]) / 100; // using a time interval of 100 microseconds (won't overflow int32)
+                if (hundredMicrosSinceLastRead > (int32_t)(encoderSlowestInterval[i] * 10) || abs(encoderCount[i] - lastEncoderCount[i]) > encoderEnoughCounts[i]) {
+                    lastReadMicros[i] = mic;
+                    encoderVelocity[i] = (int32_t)10000 * (encoderCount[i] - lastEncoderCount[i]) / hundredMicrosSinceLastRead;
+                }
             }
         }
     }
@@ -111,7 +128,7 @@ public:
      * @param  read: whether to read the encoder positions from the board before returning the value, default is false
      * @retval int32_t: the number of steps the encoder has taken
      */
-    int32_t getEncoderPositionWithOverflows(uint8_t n, boolean read = false)
+    int32_t getEncoderPosition(uint8_t n, boolean read = false)
     {
         if (read) {
             run();
@@ -122,12 +139,13 @@ public:
         return (int32_t)encoderCount[n - 1] + (int32_t)encoderOverflows[n - 1] * 65536;
     }
     /**
-     * @brief  gets the position of an encoder
+     * @brief  gets the position of an encoder as the 16 bit number that the board returns (it loops around and overflows at 32767 and underflows at -32768)
+     * @note  use getEncoderPosition if you want a 32 bit number that includes how many times the number from the board has overflowed
      * @param  n: encoder number (1-8), other values will return 0
      * @param  read: whether to read the encoder positions from the board before returning the value, default is false
      * @retval int16_t: the number of steps the encoder has taken (though it loops around and overflows at 32767 and underflows at -32768)
      */
-    int16_t getEncoderPosition(uint8_t n, boolean read = false)
+    int16_t getEncoderPositionWithoutOverflows(uint8_t n, boolean read = false)
     {
         if (read) {
             run();
@@ -136,6 +154,22 @@ public:
             return 0;
         }
         return encoderCount[n - 1];
+    }
+    /**
+     * @brief  gets the velocity of an encoder
+     * @param  n: encoder number (1-8), other values will return 0
+     * @param  read: whether to read the encoder positions from the board before returning the value, default is false
+     * @retval int16_t: the velocity of the encoder (steps per second)
+     */
+    int16_t getEncoderVelocity(uint8_t n, boolean read = false)
+    {
+        if (read) {
+            run();
+        }
+        if (n > 8 || n < 1) {
+            return 0;
+        }
+        return encoderVelocity[n - 1];
     }
     /**
      * @brief  resets all encoder positions to 0
