@@ -1,6 +1,5 @@
 var searchData=
 [
   ['begin_0',['begin',['../class_byte_sized_encoder_decoder.html#afaafc613073f19a83c58ca35a50412e1',1,'ByteSizedEncoderDecoder']]],
-  ['bitcount_1',['bitCount',['../class_byte_sized_encoder_decoder.html#afef9f4cf7f22319d4dd75a6580370aaa',1,'ByteSizedEncoderDecoder']]],
-  ['bytesizedencoderdecoder_2',['ByteSizedEncoderDecoder',['../class_byte_sized_encoder_decoder.html#aac6513e044ae1c3ee1e63272cc788bb2',1,'ByteSizedEncoderDecoder']]]
+  ['bytesizedencoderdecoder_1',['ByteSizedEncoderDecoder',['../class_byte_sized_encoder_decoder.html#aac6513e044ae1c3ee1e63272cc788bb2',1,'ByteSizedEncoderDecoder']]]
 ];

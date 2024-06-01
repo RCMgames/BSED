@@ -94,12 +94,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a66211cb3263c7a7a4856f19d5976d927" id="r_a66211cb3263c7a7a4856f19d5976d927"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a66211cb3263c7a7a4856f19d5976d927">run</a> ()</td></tr>
 <tr class="memdesc:a66211cb3263c7a7a4856f19d5976d927"><td class="mdescLeft">&#160;</td><td class="mdescRight">reads the encoder positions from the board  <br /></td></tr>
 <tr class="separator:a66211cb3263c7a7a4856f19d5976d927"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b588371a362708547faebbc9d81764d" id="r_a9b588371a362708547faebbc9d81764d"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a9b588371a362708547faebbc9d81764d">getEncoderPositionWithOverflows</a> (uint8_t n, boolean read=false)</td></tr>
-<tr class="memdesc:a9b588371a362708547faebbc9d81764d"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the position of an encoder as a 32 bit signed integer (it counts how many times the 16 bit number has overflowed)  <br /></td></tr>
-<tr class="separator:a9b588371a362708547faebbc9d81764d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b18fe5295c0a4efd9597de5b6a487ba" id="r_a5b18fe5295c0a4efd9597de5b6a487ba"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a5b18fe5295c0a4efd9597de5b6a487ba">getEncoderPosition</a> (uint8_t n, boolean read=false)</td></tr>
-<tr class="memdesc:a5b18fe5295c0a4efd9597de5b6a487ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the position of an encoder  <br /></td></tr>
-<tr class="separator:a5b18fe5295c0a4efd9597de5b6a487ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f846c80742a4333e9107df3cc5c88dc" id="r_a9f846c80742a4333e9107df3cc5c88dc"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a9f846c80742a4333e9107df3cc5c88dc">getEncoderPosition</a> (uint8_t n, boolean read=false)</td></tr>
+<tr class="memdesc:a9f846c80742a4333e9107df3cc5c88dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the position of an encoder as a 32 bit signed integer (it counts how many times the 16 bit number has overflowed)  <br /></td></tr>
+<tr class="separator:a9f846c80742a4333e9107df3cc5c88dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a639c73fefb4c3ef8649a7707aa81edd8" id="r_a639c73fefb4c3ef8649a7707aa81edd8"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a639c73fefb4c3ef8649a7707aa81edd8">getEncoderPositionWithoutOverflows</a> (uint8_t n, boolean read=false)</td></tr>
+<tr class="memdesc:a639c73fefb4c3ef8649a7707aa81edd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the position of an encoder as the 16 bit number that the board returns (it loops around and overflows at 32767 and underflows at -32768)  <br /></td></tr>
+<tr class="separator:a639c73fefb4c3ef8649a7707aa81edd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856a1b051c5644d5ff2249cdecd0feb5" id="r_a856a1b051c5644d5ff2249cdecd0feb5"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a856a1b051c5644d5ff2249cdecd0feb5">getEncoderVelocity</a> (uint8_t n, boolean read=false)</td></tr>
+<tr class="memdesc:a856a1b051c5644d5ff2249cdecd0feb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the velocity of an encoder  <br /></td></tr>
+<tr class="separator:a856a1b051c5644d5ff2249cdecd0feb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a286a9e23a046d770d8bd45177df1a65c" id="r_a286a9e23a046d770d8bd45177df1a65c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a286a9e23a046d770d8bd45177df1a65c">resetEncoderPositions</a> (boolean resetVariables=true)</td></tr>
 <tr class="memdesc:a286a9e23a046d770d8bd45177df1a65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">resets all encoder positions to 0  <br /></td></tr>
 <tr class="separator:a286a9e23a046d770d8bd45177df1a65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,9 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ada95cb18bd4b4728f16f394977c46018" id="r_ada95cb18bd4b4728f16f394977c46018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#ada95cb18bd4b4728f16f394977c46018">write</a> (uint8_t data)</td></tr>
+<tr class="memdesc:ada95cb18bd4b4728f16f394977c46018"><td class="mdescLeft">&#160;</td><td class="mdescRight">helper function to write a byte to the board  <br /></td></tr>
 <tr class="separator:ada95cb18bd4b4728f16f394977c46018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afef9f4cf7f22319d4dd75a6580370aaa" id="r_afef9f4cf7f22319d4dd75a6580370aaa"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#afef9f4cf7f22319d4dd75a6580370aaa">bitCount</a> (uint8_t b)</td></tr>
-<tr class="separator:afef9f4cf7f22319d4dd75a6580370aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -137,6 +139,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a67c9ba4274ce78ba3ebbdddd3dcd5997" id="r_a67c9ba4274ce78ba3ebbdddd3dcd5997"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a67c9ba4274ce78ba3ebbdddd3dcd5997">whichEncodersMask</a></td></tr>
 <tr class="memdesc:a67c9ba4274ce78ba3ebbdddd3dcd5997"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit mask of which encoders to read from  <br /></td></tr>
 <tr class="separator:a67c9ba4274ce78ba3ebbdddd3dcd5997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d108b0c18ae5e00387b0a1b736af28" id="r_ae1d108b0c18ae5e00387b0a1b736af28"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#ae1d108b0c18ae5e00387b0a1b736af28">lastReadMicros</a> [8]</td></tr>
+<tr class="memdesc:ae1d108b0c18ae5e00387b0a1b736af28"><td class="mdescLeft">&#160;</td><td class="mdescRight">the last time the encoders were read (microseconds)  <br /></td></tr>
+<tr class="separator:ae1d108b0c18ae5e00387b0a1b736af28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf74d103699e1094df891c8a64e65d5" id="r_a2cf74d103699e1094df891c8a64e65d5"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a2cf74d103699e1094df891c8a64e65d5">encoderVelocity</a> [8]</td></tr>
+<tr class="memdesc:a2cf74d103699e1094df891c8a64e65d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of 8 numbers representing the velocity of each encoder (steps per second)  <br /></td></tr>
+<tr class="separator:a2cf74d103699e1094df891c8a64e65d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ea68b1e2bb89a1a55b8f21816287ef" id="r_aa4ea68b1e2bb89a1a55b8f21816287ef"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#aa4ea68b1e2bb89a1a55b8f21816287ef">encoderSlowestInterval</a> [8]</td></tr>
+<tr class="memdesc:aa4ea68b1e2bb89a1a55b8f21816287ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">after this many milliseconds without an encoder tick velocity is set to zero.  <br /></td></tr>
+<tr class="separator:aa4ea68b1e2bb89a1a55b8f21816287ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65195beb5442f3950b334743f08e7cce" id="r_a65195beb5442f3950b334743f08e7cce"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a65195beb5442f3950b334743f08e7cce">encoderEnoughCounts</a> [8]</td></tr>
+<tr class="memdesc:a65195beb5442f3950b334743f08e7cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">enough counts to calculate velocity from  <br /></td></tr>
+<tr class="separator:a65195beb5442f3950b334743f08e7cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class for communicating with the firmware on a Byte Sized Encoder Decoder board </p>
@@ -222,8 +236,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="afef9f4cf7f22319d4dd75a6580370aaa" name="afef9f4cf7f22319d4dd75a6580370aaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afef9f4cf7f22319d4dd75a6580370aaa">&#9670;&#160;</a></span>bitCount()</h2>
+<a id="a9f846c80742a4333e9107df3cc5c88dc" name="a9f846c80742a4333e9107df3cc5c88dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f846c80742a4333e9107df3cc5c88dc">&#9670;&#160;</a></span>getEncoderPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,84 +246,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">byte ByteSizedEncoderDecoder::bitCount </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>b</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5b18fe5295c0a4efd9597de5b6a487ba" name="a5b18fe5295c0a4efd9597de5b6a487ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b18fe5295c0a4efd9597de5b6a487ba">&#9670;&#160;</a></span>getEncoderPosition()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int16_t ByteSizedEncoderDecoder::getEncoderPosition </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>read</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>gets the position of an encoder </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">n</td><td>encoder number (1-8), other values will return 0 </td></tr>
-    <tr><td class="paramname">read</td><td>whether to read the encoder positions from the board before returning the value, default is false </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">int16_t</td><td>the number of steps the encoder has taken (though it loops around and overflows at 32767 and underflows at -32768) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9b588371a362708547faebbc9d81764d" name="a9b588371a362708547faebbc9d81764d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b588371a362708547faebbc9d81764d">&#9670;&#160;</a></span>getEncoderPositionWithOverflows()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int32_t ByteSizedEncoderDecoder::getEncoderPositionWithOverflows </td>
+          <td class="memname">int32_t ByteSizedEncoderDecoder::getEncoderPosition </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>n</em>, </td>
@@ -344,6 +281,109 @@ Protected Attributes</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">int32_t</td><td>the number of steps the encoder has taken </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a639c73fefb4c3ef8649a7707aa81edd8" name="a639c73fefb4c3ef8649a7707aa81edd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a639c73fefb4c3ef8649a7707aa81edd8">&#9670;&#160;</a></span>getEncoderPositionWithoutOverflows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ByteSizedEncoderDecoder::getEncoderPositionWithoutOverflows </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>read</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>gets the position of an encoder as the 16 bit number that the board returns (it loops around and overflows at 32767 and underflows at -32768) </p>
+<dl class="section note"><dt>Note</dt><dd>use getEncoderPosition if you want a 32 bit number that includes how many times the number from the board has overflowed </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>encoder number (1-8), other values will return 0 </td></tr>
+    <tr><td class="paramname">read</td><td>whether to read the encoder positions from the board before returning the value, default is false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int16_t</td><td>the number of steps the encoder has taken (though it loops around and overflows at 32767 and underflows at -32768) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a856a1b051c5644d5ff2249cdecd0feb5" name="a856a1b051c5644d5ff2249cdecd0feb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856a1b051c5644d5ff2249cdecd0feb5">&#9670;&#160;</a></span>getEncoderVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ByteSizedEncoderDecoder::getEncoderVelocity </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">boolean&#160;</td>
+          <td class="paramname"><em>read</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>gets the velocity of an encoder </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>encoder number (1-8), other values will return 0 </td></tr>
+    <tr><td class="paramname">read</td><td>whether to read the encoder positions from the board before returning the value, default is false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int16_t</td><td>the velocity of the encoder (steps per second) </td></tr>
   </table>
   </dd>
 </dl>
@@ -510,6 +550,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>helper function to write a byte to the board </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -561,6 +603,30 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a65195beb5442f3950b334743f08e7cce" name="a65195beb5442f3950b334743f08e7cce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65195beb5442f3950b334743f08e7cce">&#9670;&#160;</a></span>encoderEnoughCounts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ByteSizedEncoderDecoder::encoderEnoughCounts[8]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>enough counts to calculate velocity from </p>
+
+</div>
+</div>
 <a id="aaaedba3e69d158d0a1cfa0c32dbca7d1" name="aaaedba3e69d158d0a1cfa0c32dbca7d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaaedba3e69d158d0a1cfa0c32dbca7d1">&#9670;&#160;</a></span>encoderOverflows</h2>
 
@@ -585,6 +651,54 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa4ea68b1e2bb89a1a55b8f21816287ef" name="aa4ea68b1e2bb89a1a55b8f21816287ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ea68b1e2bb89a1a55b8f21816287ef">&#9670;&#160;</a></span>encoderSlowestInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ByteSizedEncoderDecoder::encoderSlowestInterval[8]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>after this many milliseconds without an encoder tick velocity is set to zero. </p>
+
+</div>
+</div>
+<a id="a2cf74d103699e1094df891c8a64e65d5" name="a2cf74d103699e1094df891c8a64e65d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cf74d103699e1094df891c8a64e65d5">&#9670;&#160;</a></span>encoderVelocity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ByteSizedEncoderDecoder::encoderVelocity[8]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>array of 8 numbers representing the velocity of each encoder (steps per second) </p>
+
+</div>
+</div>
 <a id="ae3d2c555633d22b41be5bc5d787b35d4" name="ae3d2c555633d22b41be5bc5d787b35d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3d2c555633d22b41be5bc5d787b35d4">&#9670;&#160;</a></span>lastEncoderCount</h2>
 
@@ -606,6 +720,30 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>array of 8 numbers representing the last encoder count read from the board </p>
+
+</div>
+</div>
+<a id="ae1d108b0c18ae5e00387b0a1b736af28" name="ae1d108b0c18ae5e00387b0a1b736af28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d108b0c18ae5e00387b0a1b736af28">&#9670;&#160;</a></span>lastReadMicros</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long ByteSizedEncoderDecoder::lastReadMicros[8]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the last time the encoders were read (microseconds) </p>
 
 </div>
 </div>
