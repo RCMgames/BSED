@@ -249,6 +249,8 @@ public:
             for (byte i = 0; i < 8; i++) {
                 encoderCount[i] = 0;
                 encoderOverflows[i] = 0;
+                lastEncoderCount[i] = 0;
+                encoderVelocity[i] = 0;
             }
         }
     }
