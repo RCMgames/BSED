@@ -48,6 +48,10 @@ protected:
      */
     int16_t encoderEnoughCounts[8];
     /**
+     * @brief  array of 8 booleans representing whether the velocity was just calculated
+     */
+    boolean isVelNew[8];
+    /**
      * @brief  helper function to write a byte to the board
      */
     inline void write(uint8_t data)
@@ -62,13 +66,75 @@ public:
      * @brief Constructor for the Byte Sized Encoder Decoder class
      * @param  _wire: I2C bus to communicate over. &Wire or &Wire1
      * @param  _address: I2C address of the Byte Sized Encoder Decoder board (as selected by the jumpers), default is 14, (14-17 are options)
+     * @param  _encoderSlowestInterval: after this many milliseconds without a calculation, velocity is recalculated
+     * @param  _encoderEnoughCounts: enough counts to calculate velocity
      */
-    ByteSizedEncoderDecoder(TwoWire* _wire, uint8_t _address = 14)
+    ByteSizedEncoderDecoder(TwoWire* _wire, uint8_t _address = 14, int16_t _encoderSlowestInterval = 0, int16_t _encoderEnoughCounts = 0)
     {
         wire = _wire;
         address = _address;
         whichEncodersMask = 255;
+        memset(encoderCount, 0, 8);
+        memset(encoderOverflows, 0, 8);
+        memset(lastEncoderCount, 0, 8);
+        memset(lastReadMicros, 0, 8);
+        memset(encoderVelocity, 0, 8);
+        memset(encoderSlowestInterval, _encoderSlowestInterval, 8);
+        memset(encoderEnoughCounts, _encoderEnoughCounts, 8);
     }
+    /**
+     * @brief set the value of encoderSlowestInterval
+     * @param  n: encoder number (1-8), or 0 to set all at once
+     * @param  interval: after this many milliseconds without a calculation, velocity is recalculated
+     */
+    void setEncoderSlowestInterval(uint8_t n, int16_t interval)
+    {
+        if (n > 8) {
+            return;
+        }
+        if (n == 0) {
+            for (byte i = 0; i < 8; i++) {
+                encoderSlowestInterval[i] = interval;
+            }
+            return;
+        }
+        encoderSlowestInterval[n - 1] = interval;
+    }
+    /**
+     * @brief set the value of encoderEnoughCounts
+     * @param  n: encoder number (1-8), or 0 to set all at once
+     * @param  counts: enough counts to calculate velocity
+     */
+    void setEncoderEnoughCounts(uint8_t n, int16_t counts)
+    {
+        if (n > 8) {
+            return;
+        }
+        if (n == 0) {
+            for (byte i = 0; i < 8; i++) {
+                encoderEnoughCounts[i] = counts;
+            }
+            return;
+        }
+        encoderEnoughCounts[n - 1] = counts;
+    }
+
+    /**
+     * @brief  whether the velocity was just calculated
+     * @note this function resets the value to false, so call it just once
+     * @param  n: encoder number (1-8)
+     * @retval boolean: whether the velocity was just calculated
+     */
+    boolean isVelNew(uint8_t n)
+    {
+        if (n > 8 || n < 1) {
+            return false;
+        }
+        boolean temp = isVelNew[n - 1];
+        isVelNew[n - 1] = false;
+        return temp;
+    }
+
     /**
      * @brief  sets up the Byte Sized Encoder Decoder board
      * all it really does is tell the board to read from all encoders
@@ -118,6 +184,7 @@ public:
                 if (hundredMicrosSinceLastRead > (int32_t)(encoderSlowestInterval[i] * 10) || abs(encoderCount[i] - lastEncoderCount[i]) > encoderEnoughCounts[i]) {
                     lastReadMicros[i] = mic;
                     encoderVelocity[i] = (int32_t)10000 * (encoderCount[i] - lastEncoderCount[i]) / hundredMicrosSinceLastRead;
+                    isVelNew[i] = true;
                 }
             }
         }
