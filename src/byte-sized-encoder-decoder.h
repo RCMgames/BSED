@@ -187,7 +187,7 @@ public:
                 // calculate velocity
                 unsigned long mic = micros();
                 int32_t hundredMicrosSinceLastRead = (mic - lastReadMicros[i]) / 100; // using a time interval of 100 microseconds (won't overflow int32)
-                if (hundredMicrosSinceLastRead > (int32_t)(encoderSlowestInterval[i] * 10) || abs(encoderCount[i] - lastEncoderCount[i]) > encoderEnoughCounts[i]) {
+                if (hundredMicrosSinceLastRead > (int32_t)(encoderSlowestInterval[i] * 10) || abs(encoderCount[i] - lastVelocityEncoderCount[i]) > encoderEnoughCounts[i]) {
                     lastReadMicros[i] = mic;
                     encoderVelocity[i] = (int32_t)10000 * (encoderCount[i] - lastVelocityEncoderCount[i]) / hundredMicrosSinceLastRead;
                     lastVelocityEncoderCount[i] = encoderCount[i];
