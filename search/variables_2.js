@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isvelnew_0',['isVelNew',['../class_byte_sized_encoder_decoder.html#ac1c21614314bb48860f3e539ef0f02ea',1,'ByteSizedEncoderDecoder']]]
+  ['isvelnewval_0',['isVelNewVal',['../class_byte_sized_encoder_decoder.html#a77a5fa293416f7743c151cb1a3ee4e4b',1,'ByteSizedEncoderDecoder']]]
 ];
