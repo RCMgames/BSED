@@ -85,9 +85,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aac6513e044ae1c3ee1e63272cc788bb2" id="r_aac6513e044ae1c3ee1e63272cc788bb2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#aac6513e044ae1c3ee1e63272cc788bb2">ByteSizedEncoderDecoder</a> (TwoWire *_wire, uint8_t _address=14)</td></tr>
-<tr class="memdesc:aac6513e044ae1c3ee1e63272cc788bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Byte Sized Encoder Decoder class.  <br /></td></tr>
-<tr class="separator:aac6513e044ae1c3ee1e63272cc788bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef89be72e2ae3c51790bceb77a95f96f" id="r_aef89be72e2ae3c51790bceb77a95f96f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#aef89be72e2ae3c51790bceb77a95f96f">ByteSizedEncoderDecoder</a> (TwoWire *_wire, uint8_t _address=14, int16_t _encoderSlowestInterval=0, int16_t _encoderEnoughCounts=0)</td></tr>
+<tr class="memdesc:aef89be72e2ae3c51790bceb77a95f96f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the Byte Sized Encoder Decoder class.  <br /></td></tr>
+<tr class="separator:aef89be72e2ae3c51790bceb77a95f96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc356b5e6c7d0d64cd9252ab8764c42" id="r_adcc356b5e6c7d0d64cd9252ab8764c42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#adcc356b5e6c7d0d64cd9252ab8764c42">setEncoderSlowestInterval</a> (uint8_t n, int16_t interval)</td></tr>
+<tr class="memdesc:adcc356b5e6c7d0d64cd9252ab8764c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the value of encoderSlowestInterval  <br /></td></tr>
+<tr class="separator:adcc356b5e6c7d0d64cd9252ab8764c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795dad2859cfe20084216aa7436c33af" id="r_a795dad2859cfe20084216aa7436c33af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a795dad2859cfe20084216aa7436c33af">setEncoderEnoughCounts</a> (uint8_t n, int16_t counts)</td></tr>
+<tr class="memdesc:a795dad2859cfe20084216aa7436c33af"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the value of encoderEnoughCounts  <br /></td></tr>
+<tr class="separator:a795dad2859cfe20084216aa7436c33af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7801e217c3adac17bbccf3b6c474158" id="r_ad7801e217c3adac17bbccf3b6c474158"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#ad7801e217c3adac17bbccf3b6c474158">isVelNew</a> (uint8_t n)</td></tr>
+<tr class="memdesc:ad7801e217c3adac17bbccf3b6c474158"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether the velocity was just calculated  <br /></td></tr>
+<tr class="separator:ad7801e217c3adac17bbccf3b6c474158"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afaafc613073f19a83c58ca35a50412e1" id="r_afaafc613073f19a83c58ca35a50412e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#afaafc613073f19a83c58ca35a50412e1">begin</a> (boolean resetEncoders=true)</td></tr>
 <tr class="memdesc:afaafc613073f19a83c58ca35a50412e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets up the Byte Sized Encoder Decoder board all it really does is tell the board to read from all encoders  <br /></td></tr>
 <tr class="separator:afaafc613073f19a83c58ca35a50412e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,12 +160,15 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a65195beb5442f3950b334743f08e7cce" id="r_a65195beb5442f3950b334743f08e7cce"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a65195beb5442f3950b334743f08e7cce">encoderEnoughCounts</a> [8]</td></tr>
 <tr class="memdesc:a65195beb5442f3950b334743f08e7cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">enough counts to calculate velocity from  <br /></td></tr>
 <tr class="separator:a65195beb5442f3950b334743f08e7cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c21614314bb48860f3e539ef0f02ea" id="r_ac1c21614314bb48860f3e539ef0f02ea"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#ac1c21614314bb48860f3e539ef0f02ea">isVelNew</a> [8]</td></tr>
+<tr class="memdesc:ac1c21614314bb48860f3e539ef0f02ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of 8 booleans representing whether the velocity was just calculated  <br /></td></tr>
+<tr class="separator:ac1c21614314bb48860f3e539ef0f02ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class for communicating with the firmware on a Byte Sized Encoder Decoder board </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aac6513e044ae1c3ee1e63272cc788bb2" name="aac6513e044ae1c3ee1e63272cc788bb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac6513e044ae1c3ee1e63272cc788bb2">&#9670;&#160;</a></span>ByteSizedEncoderDecoder()</h2>
+<a id="aef89be72e2ae3c51790bceb77a95f96f" name="aef89be72e2ae3c51790bceb77a95f96f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef89be72e2ae3c51790bceb77a95f96f">&#9670;&#160;</a></span>ByteSizedEncoderDecoder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +186,19 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>_address</em> = <code>14</code>&#160;</td>
+          <td class="paramname"><em>_address</em> = <code>14</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>_encoderSlowestInterval</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>_encoderEnoughCounts</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -194,6 +218,8 @@ Protected Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">_wire</td><td>I2C bus to communicate over. &amp;Wire or &amp;Wire1 </td></tr>
     <tr><td class="paramname">_address</td><td>I2C address of the Byte Sized Encoder Decoder board (as selected by the jumpers), default is 14, (14-17 are options) </td></tr>
+    <tr><td class="paramname">_encoderSlowestInterval</td><td>after this many milliseconds without a calculation, velocity is recalculated </td></tr>
+    <tr><td class="paramname">_encoderEnoughCounts</td><td>enough counts to calculate velocity </td></tr>
   </table>
   </dd>
 </dl>
@@ -430,6 +456,47 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ad7801e217c3adac17bbccf3b6c474158" name="ad7801e217c3adac17bbccf3b6c474158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7801e217c3adac17bbccf3b6c474158">&#9670;&#160;</a></span>isVelNew()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean ByteSizedEncoderDecoder::isVelNew </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>whether the velocity was just calculated </p>
+<dl class="section note"><dt>Note</dt><dd>this function resets the value to false, so call it just once </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>encoder number (1-8) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">boolean</td><td>whether the velocity was just calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a286a9e23a046d770d8bd45177df1a65c" name="a286a9e23a046d770d8bd45177df1a65c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a286a9e23a046d770d8bd45177df1a65c">&#9670;&#160;</a></span>resetEncoderPositions()</h2>
 
@@ -489,6 +556,96 @@ Protected Attributes</h2></td></tr>
 
 <p>reads the encoder positions from the board </p>
 <dl class="section note"><dt>Note</dt><dd>call this in your loop to update the encoder positions </dd></dl>
+
+</div>
+</div>
+<a id="a795dad2859cfe20084216aa7436c33af" name="a795dad2859cfe20084216aa7436c33af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795dad2859cfe20084216aa7436c33af">&#9670;&#160;</a></span>setEncoderEnoughCounts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ByteSizedEncoderDecoder::setEncoderEnoughCounts </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>counts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set the value of encoderEnoughCounts </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>encoder number (1-8), or 0 to set all at once </td></tr>
+    <tr><td class="paramname">counts</td><td>enough counts to calculate velocity </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adcc356b5e6c7d0d64cd9252ab8764c42" name="adcc356b5e6c7d0d64cd9252ab8764c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc356b5e6c7d0d64cd9252ab8764c42">&#9670;&#160;</a></span>setEncoderSlowestInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ByteSizedEncoderDecoder::setEncoderSlowestInterval </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>interval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set the value of encoderSlowestInterval </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>encoder number (1-8), or 0 to set all at once </td></tr>
+    <tr><td class="paramname">interval</td><td>after this many milliseconds without a calculation, velocity is recalculated </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -696,6 +853,30 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>array of 8 numbers representing the velocity of each encoder (steps per second) </p>
+
+</div>
+</div>
+<a id="ac1c21614314bb48860f3e539ef0f02ea" name="ac1c21614314bb48860f3e539ef0f02ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1c21614314bb48860f3e539ef0f02ea">&#9670;&#160;</a></span>isVelNew</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean ByteSizedEncoderDecoder::isVelNew[8]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>array of 8 booleans representing whether the velocity was just calculated </p>
 
 </div>
 </div>
