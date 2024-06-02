@@ -20,7 +20,7 @@ https://github.com/RCMgames/BSED
 * [Documentation for Library](https://rcmgames.github.io/BSED/class_byte_sized_encoder_decoder.html)
 * [Hardware](https://github.com/RCMgames/BSED/tree/main/extras/hardware)
   * If you buy PCBs from PCBWay through this link PCBWay generously gives me a 10% commission without costing you anything
-    * https://www.pcbway.com/project/shareproject/Byte_Sized_Encoder_Decoder_v1_0_5b76fc5d.html
+    * https://www.pcbway.com/project/shareproject/ByteSizedEncoderDecoder_v1_1_a5a4bd50.html
 * [Firmware](https://github.com/RCMgames/BSED/tree/main/extras/firmware)
 
 ### testing
