@@ -142,6 +142,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ae3d2c555633d22b41be5bc5d787b35d4" id="r_ae3d2c555633d22b41be5bc5d787b35d4"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#ae3d2c555633d22b41be5bc5d787b35d4">lastEncoderCount</a> [8]</td></tr>
 <tr class="memdesc:ae3d2c555633d22b41be5bc5d787b35d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of 8 numbers representing the last encoder count read from the board  <br /></td></tr>
 <tr class="separator:ae3d2c555633d22b41be5bc5d787b35d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0984e2337b36f16e0c6fe7d368532a" id="r_a3e0984e2337b36f16e0c6fe7d368532a"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a3e0984e2337b36f16e0c6fe7d368532a">lastVelocityEncoderCount</a> [8]</td></tr>
+<tr class="memdesc:a3e0984e2337b36f16e0c6fe7d368532a"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of 8 numbers representing the last encoder count read from the board for velocity calculation  <br /></td></tr>
+<tr class="separator:a3e0984e2337b36f16e0c6fe7d368532a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f53f3b9b3726f333c94a122b70010c4" id="r_a9f53f3b9b3726f333c94a122b70010c4"><td class="memItemLeft" align="right" valign="top">TwoWire *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_byte_sized_encoder_decoder.html#a9f53f3b9b3726f333c94a122b70010c4">wire</a></td></tr>
 <tr class="memdesc:a9f53f3b9b3726f333c94a122b70010c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C bus to communicate over.  <br /></td></tr>
 <tr class="separator:a9f53f3b9b3726f333c94a122b70010c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -925,6 +928,30 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>the last time the encoders were read (microseconds) </p>
+
+</div>
+</div>
+<a id="a3e0984e2337b36f16e0c6fe7d368532a" name="a3e0984e2337b36f16e0c6fe7d368532a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e0984e2337b36f16e0c6fe7d368532a">&#9670;&#160;</a></span>lastVelocityEncoderCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t ByteSizedEncoderDecoder::lastVelocityEncoderCount[8]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>array of 8 numbers representing the last encoder count read from the board for velocity calculation </p>
 
 </div>
 </div>
