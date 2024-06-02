@@ -18,11 +18,11 @@ void loop()
     for (int i = 1; i <= 8; i++) {
         if (bsed.isEncoderActive(i)) {
             Serial.print(i);
-            Serial.print(":");
+            Serial.print(": ");
             Serial.print(bsed.getEncoderPosition(i));
-            Serial.print(",");
+            Serial.print(" ");
             Serial.print(bsed.getEncoderVelocity(i));
-            Serial.print(";");
+            Serial.print("; ");
         }
     }
     Serial.println();

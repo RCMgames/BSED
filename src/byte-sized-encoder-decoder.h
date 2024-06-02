@@ -24,6 +24,10 @@ protected:
      */
     int16_t lastEncoderCount[8];
     /**
+     * @brief  array of 8 numbers representing the last encoder count read from the board for velocity calculation
+     */
+    int16_t lastVelocityEncoderCount[8];
+    /**
      * @brief  I2C bus to communicate over.
      */
     TwoWire* wire;
@@ -77,10 +81,12 @@ public:
         memset(encoderCount, 0, 8);
         memset(encoderOverflows, 0, 8);
         memset(lastEncoderCount, 0, 8);
+        memset(lastVelocityEncoderCount, 0, 8);
         memset(lastReadMicros, 0, 8);
         memset(encoderVelocity, 0, 8);
         memset(encoderSlowestInterval, _encoderSlowestInterval, 8);
         memset(encoderEnoughCounts, _encoderEnoughCounts, 8);
+        memset(isVelNewVal, 0, 8);
     }
     /**
      * @brief set the value of encoderSlowestInterval
@@ -183,7 +189,8 @@ public:
                 int32_t hundredMicrosSinceLastRead = (mic - lastReadMicros[i]) / 100; // using a time interval of 100 microseconds (won't overflow int32)
                 if (hundredMicrosSinceLastRead > (int32_t)(encoderSlowestInterval[i] * 10) || abs(encoderCount[i] - lastEncoderCount[i]) > encoderEnoughCounts[i]) {
                     lastReadMicros[i] = mic;
-                    encoderVelocity[i] = (int32_t)10000 * (encoderCount[i] - lastEncoderCount[i]) / hundredMicrosSinceLastRead;
+                    encoderVelocity[i] = (int32_t)10000 * (encoderCount[i] - lastVelocityEncoderCount[i]) / hundredMicrosSinceLastRead;
+                    lastVelocityEncoderCount[i] = encoderCount[i];
                     isVelNewVal[i] = true;
                 }
             }

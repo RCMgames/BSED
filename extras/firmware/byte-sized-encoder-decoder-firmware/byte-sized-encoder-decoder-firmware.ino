@@ -293,17 +293,17 @@ ISR(PCINT0_vect)
     lastPortBPinStates = pinStates;
 
     if (bitRead(changedPins, 0))
-        (bitRead(pinStates, 0) == bitRead(pinStates, 1)) ? encoderCount[4]++ : encoderCount[4]--;
+        (bitRead(pinStates, 0) == bitRead(pinStates, 1)) ? encoderCount[4]-- : encoderCount[4]++;
     if (bitRead(changedPins, 1))
-        (bitRead(pinStates, 0) != bitRead(pinStates, 1)) ? encoderCount[4]++ : encoderCount[4]--;
+        (bitRead(pinStates, 0) != bitRead(pinStates, 1)) ? encoderCount[4]-- : encoderCount[4]++;
     if (bitRead(changedPins, 2))
-        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[3]++ : encoderCount[3]--;
+        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[3]-- : encoderCount[3]++;
     if (bitRead(changedPins, 3))
-        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[3]++ : encoderCount[3]--;
+        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[3]-- : encoderCount[3]++;
     if (bitRead(changedPins, 4))
-        (bitRead(pinStates, 4) == bitRead(pinStates, 5)) ? encoderCount[2]++ : encoderCount[2]--;
+        (bitRead(pinStates, 4) == bitRead(pinStates, 5)) ? encoderCount[2]-- : encoderCount[2]++;
     if (bitRead(changedPins, 5))
-        (bitRead(pinStates, 4) != bitRead(pinStates, 5)) ? encoderCount[2]++ : encoderCount[2]--;
+        (bitRead(pinStates, 4) != bitRead(pinStates, 5)) ? encoderCount[2]-- : encoderCount[2]++;
 }
 
 ISR(PCINT1_vect)
@@ -313,13 +313,13 @@ ISR(PCINT1_vect)
     uint8_t changedPins = pinStates ^ lastPortCPinStates;
     lastPortCPinStates = pinStates;
     if (bitRead(changedPins, 0))
-        (bitRead(pinStates, 0) == bitRead(pinStates, 1)) ? encoderCount[1]++ : encoderCount[1]--;
+        (bitRead(pinStates, 0) == bitRead(pinStates, 1)) ? encoderCount[1]-- : encoderCount[1]++;
     if (bitRead(changedPins, 1))
-        (bitRead(pinStates, 0) != bitRead(pinStates, 1)) ? encoderCount[1]++ : encoderCount[1]--;
+        (bitRead(pinStates, 0) != bitRead(pinStates, 1)) ? encoderCount[1]-- : encoderCount[1]++;
     if (bitRead(changedPins, 2))
-        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[0]-- : encoderCount[0]++;
+        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[0]++ : encoderCount[0]--;
     if (bitRead(changedPins, 3))
-        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[0]-- : encoderCount[0]++;
+        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[0]++ : encoderCount[0]--;
 }
 ISR(PCINT2_vect)
 {
@@ -327,15 +327,15 @@ ISR(PCINT2_vect)
     uint8_t changedPins = pinStates ^ lastPortDPinStates;
     lastPortDPinStates = pinStates;
     if (bitRead(changedPins, 2))
-        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[7]++ : encoderCount[7]--;
+        (bitRead(pinStates, 2) == bitRead(pinStates, 3)) ? encoderCount[7]-- : encoderCount[7]++;
     if (bitRead(changedPins, 3))
-        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[7]++ : encoderCount[7]--;
+        (bitRead(pinStates, 2) != bitRead(pinStates, 3)) ? encoderCount[7]-- : encoderCount[7]++;
     if (bitRead(changedPins, 4))
-        (bitRead(pinStates, 4) == bitRead(pinStates, 5)) ? encoderCount[6]++ : encoderCount[6]--;
+        (bitRead(pinStates, 4) == bitRead(pinStates, 5)) ? encoderCount[6]-- : encoderCount[6]++;
     if (bitRead(changedPins, 5))
-        (bitRead(pinStates, 4) != bitRead(pinStates, 5)) ? encoderCount[6]++ : encoderCount[6]--;
+        (bitRead(pinStates, 4) != bitRead(pinStates, 5)) ? encoderCount[6]-- : encoderCount[6]++;
     if (bitRead(changedPins, 6))
-        (bitRead(pinStates, 6) == bitRead(pinStates, 7)) ? encoderCount[5]++ : encoderCount[5]--;
+        (bitRead(pinStates, 6) == bitRead(pinStates, 7)) ? encoderCount[5]-- : encoderCount[5]++;
     if (bitRead(changedPins, 7))
-        (bitRead(pinStates, 6) != bitRead(pinStates, 7)) ? encoderCount[5]++ : encoderCount[5]--;
+        (bitRead(pinStates, 6) != bitRead(pinStates, 7)) ? encoderCount[5]-- : encoderCount[5]++;
 }
