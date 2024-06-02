@@ -50,7 +50,7 @@ protected:
     /**
      * @brief  array of 8 booleans representing whether the velocity was just calculated
      */
-    boolean isVelNew[8];
+    boolean isVelNewVal[8];
     /**
      * @brief  helper function to write a byte to the board
      */
@@ -130,8 +130,8 @@ public:
         if (n > 8 || n < 1) {
             return false;
         }
-        boolean temp = isVelNew[n - 1];
-        isVelNew[n - 1] = false;
+        boolean temp = isVelNewVal[n - 1];
+        isVelNewVal[n - 1] = false;
         return temp;
     }
 
@@ -184,7 +184,7 @@ public:
                 if (hundredMicrosSinceLastRead > (int32_t)(encoderSlowestInterval[i] * 10) || abs(encoderCount[i] - lastEncoderCount[i]) > encoderEnoughCounts[i]) {
                     lastReadMicros[i] = mic;
                     encoderVelocity[i] = (int32_t)10000 * (encoderCount[i] - lastEncoderCount[i]) / hundredMicrosSinceLastRead;
-                    isVelNew[i] = true;
+                    isVelNewVal[i] = true;
                 }
             }
         }
