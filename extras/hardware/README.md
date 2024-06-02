@@ -5,8 +5,8 @@ You could theoretically run it on a bare ATmega328 chip or another board, but th
 ### Bill Of Materials
 
 * 1x assembled PCB
-   * or buy assembled PCBs from PCBWay with all the surface mount soldering done for you
-      * (link coming soon)
+   * buy assembled PCBs from PCBWay with all the surface mount soldering done for you
+      * https://www.pcbway.com/project/shareproject/ByteSizedEncoderDecoder_v1_1_a5a4bd50.html
    * or do your own surface mount soldering:
       * circuit board:
          * If you buy PCBs from PCBWay through this link PCBWay generously gives me a 10% commission without costing you anything
