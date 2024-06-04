@@ -78,15 +78,17 @@ public:
         wire = _wire;
         address = _address;
         whichEncodersMask = 255;
-        memset(encoderCount, 0, 8);
-        memset(encoderOverflows, 0, 8);
-        memset(lastEncoderCount, 0, 8);
-        memset(lastVelocityEncoderCount, 0, 8);
-        memset(lastReadMicros, 0, 8);
-        memset(encoderVelocity, 0, 8);
-        memset(encoderSlowestInterval, _encoderSlowestInterval, 8);
-        memset(encoderEnoughCounts, _encoderEnoughCounts, 8);
-        memset(isVelNewVal, 0, 8);
+
+        // memset encoderCount[] all 0
+        memset(encoderCount, 0, 8 * sizeof(int16_t));
+        memset(encoderOverflows, 0, 8 * sizeof(int16_t));
+        memset(lastEncoderCount, 0, 8 * sizeof(int16_t));
+        memset(lastVelocityEncoderCount, 0, 8 * sizeof(int16_t));
+        memset(lastReadMicros, 0, 8 * sizeof(unsigned long));
+        memset(encoderVelocity, 0, 8 * sizeof(int16_t));
+        memset(encoderSlowestInterval, _encoderSlowestInterval, 8 * sizeof(int16_t));
+        memset(encoderEnoughCounts, _encoderEnoughCounts, 8 * sizeof(int16_t));
+        memset(isVelNewVal, 0, 8 * sizeof(boolean));
     }
     /**
      * @brief set the value of encoderSlowestInterval
