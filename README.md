@@ -28,14 +28,14 @@ Approximately 15000 encoder counts per second can be read from each encoder, but
 
 See, and contribute to, this discussion on testing results: https://github.com/RCMgames/BSED/discussions/6
 
-![front](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039300.JPG)
-![back](https://github.com/RCMgames/BSED/blob/fd907d3367903d2f684a02541658e857a268ef72/extras/hardware/photos/P1039304.JPG)
-
 I've been working on [hardware and software for small wifi controlled robots](https://github.com/rcmgames) since 2020.
 
 As I have designed increasingly small [circuit boards](https://github.com/rcmgames) for controlling servos and motors on robots, I started looking for a way to connect lots of quadrature encoders as inputs to a microcontroller. I was unable to find any existing Qwiic-compatible encoder reading boards that can handle multiple high-speed quadrature inputs. This board can help you control 8 motors with encoder feedback for precise control.
 
 This version of firmware and library are compatible with version 1 of the hardware.
+
+![back of pcb](https://github.com/RCMgames/BSED/blob/1310fdb7eef3eef2137f9add774d0ee8011ccfcf/extras/hardware/photos/P1040735.JPG)
+![front of assembled pcb](https://github.com/RCMgames/BSED/blob/1310fdb7eef3eef2137f9add774d0ee8011ccfcf/extras/hardware/photos/P1040733.JPG)
 
 ## Acknowledgements
 * I would like to thank [PCBWay](https://www.pcbway.com/) for sponsoring prototyping runs of this project. PCBWay produces very nice boards, supports open source hardware, and gave me great support as I worked on this project. Special thanks to Liam!
