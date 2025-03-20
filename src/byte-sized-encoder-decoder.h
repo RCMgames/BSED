@@ -183,7 +183,7 @@ public:
             } else {
                 lastEncoderCount[i] = encoderCount[i];
                 encoderCount[i] = (((uint16_t)high) << 8 | ((uint16_t)low));
-                if (abs(encoderCount[i] - lastEncoderCount[i]) > (1 << 15)) {
+                if (abs(encoderCount[i] - lastEncoderCount[i]) > (int32_t)(32768)) {
                     encoderOverflows[i] += (encoderCount[i] > lastEncoderCount[i]) ? -1 : 1;
                 }
                 // calculate velocity
